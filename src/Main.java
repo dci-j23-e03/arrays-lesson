@@ -72,20 +72,20 @@ public class Main {
         matrix[4][0] = 1;
         System.out.println(matrix[0][2]);
         System.out.println(matrix[3][1]);
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
 
         float[][] floatMatrix = { {1, 2 ,3}, {5, 5, 5}, {9, 9, 9} };
-        printMatrix(floatMatrix, 3, 3);
+        printMatrix(floatMatrix);
     }
 
-    static void printMatrix(float[][] matrix, int row, int column) {
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < column; j++) {
+    static void printMatrix(float[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
