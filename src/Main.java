@@ -32,7 +32,37 @@ public class Main {
         System.out.println(cities[2]);
 
         double[] doubles = {2.0, 3d, 0, 2.5, 1.2};
-        System.out.println(doubles[2]);
+//        System.out.println(doubles[2]);
+
+        // add - remove not possible, we can update, if we want to add some element, we need to remove existing one (update)
+        doubles[4] = 10;
+
+        for (double num : doubles) {
+            System.out.println(num);
+        }
+
+        // remove an element, we can just create a new array
+        doubles = new double[] {2.0, 3d, 2.5, 10};
+
+        double[] temp = new double[doubles.length];
+        int k = 0;
+        for (int i = 0; i < doubles.length; i++) {
+            if (doubles[i] < 3.0) {
+                temp[k] = doubles[i];
+                k++;
+            }
+        }
+
+        double[] doublesLessThan3 = new double[k];
+        for (int i = 0; i < k; i++) {
+            doublesLessThan3[i] = temp[i];
+        }
+
+        System.out.println("Doubles less than 3: ");
+        for (double num : doublesLessThan3) {
+            System.out.println(num);
+        }
+
 
 //        doubles.length = 10;
         System.out.println("Length of doubles array: " + doubles.length);
@@ -81,6 +111,8 @@ public class Main {
 
         float[][] floatMatrix = { {1, 2 ,3}, {5, 5, 5}, {9, 9, 9} };
         printMatrix(floatMatrix);
+
+
     }
 
     static void printMatrix(float[][] matrix) {
